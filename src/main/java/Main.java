@@ -30,10 +30,10 @@ public class Main {
         int minutesBetweenUpdate = 10;
         Timer timer = new Timer("UpdateViewersTimer");
         UpdateViewersTask updateViewers = new UpdateViewersTask(gateway, dotenv);
-        timer.schedule(updateViewers, 0, minutesBetweenUpdate * 1 * 1000);
+        timer.schedule(updateViewers, 0, minutesBetweenUpdate * 60 * 1000);
       
         StartCommercialTask commercialTask = new StartCommercialTask(gateway, dotenv);
-        timer.schedule(commercialTask, 0, minutesBetweenUpdate * 1 * 1000);
+        timer.schedule(commercialTask, 0, minutesBetweenUpdate * 60 * 1000);
       } catch (Exception e) {
         retry = true;
         System.out.println(e.getMessage());
